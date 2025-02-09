@@ -10,4 +10,7 @@ Part 1 - Steps to use the DS5111 Repository:
 Part 2 - Steps to add additional tools.
 1. To install the chrome headless browser, run the command "bash install_chrome_headless.sh" in the terminal, which will execute the bash file.
 2. Run "wget https://example.com" in the terminal to test that the browser works. Then run "cat index.html" which should output the html code for the website.
-3. 
+3. A file titled requirements.txt exists in the repo which lists the dependencies for the project.
+4. Run the command "make update" in your terminal to run the makefile. This makefile uses the requirements.txt file.
+5. Test the headless browser by running "make ygainers.csv" in the terminal.
+6. Structure of the repo:
