@@ -5,3 +5,4 @@ Steps to use the DS5111 Repository:
 4. Set up SSH access in the virtual machine by following the steps in the "00_00_setup_script_for_git_github.md" file.
 5. Set up your global git credentials using the teminal on your virtual machine by following the steps in the "00_01_setup_git_global_creds.sh" file. For the "USER", substitute your own email used with your github account. For the "NAME", substitute your own github username. After running "git config --global --list" the second time, you should see your username and email.
 6. Clone your repo to the virtual machine by running the following command in your terminal: "git clone <ssh repo link>". Then run the command "ls" and you should see your repo name.
+7. Run the "init.sh" script in this repo. This completes the base steps for setting up your virtual machine.
