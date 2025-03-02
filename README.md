@@ -1,4 +1,7 @@
-Part 1 - Steps to use the DS5111 Repository:
+# Repository Overview
+This repository allows the user to automate the extraction of wsj and yahoo stock gainers data, then provides functionality to normalize the data. Tests and linting files have been added.
+
+## Part 1 - Steps to use the DS5111 Repository:
 1. Run "sudo apt update" on your virtual machine
 2. Generate a new SSH key using these instructions under the "Generating a new SSH key" section: (resource) https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 3. Add the public side of the new SSH key to your github account by following these steps: (resource) https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
@@ -8,7 +11,7 @@ Part 1 - Steps to use the DS5111 Repository:
 7. Run the command "bash init.sh" script to run the init file. This completes the base steps for setting up your virtual machine.
 
 
-Part 2 - Steps to add additional tools.
+## Part 2 - Steps to add additional tools.
 1. To install the chrome headless browser, run the command "bash install_chrome_headless.sh" in the terminal, which will execute the bash file.
 2. Run "wget https://example.com" in the terminal to test that the browser works. Then run "cat index.html" which should output the html code for the website.
 3. A file titled requirements.txt exists in the repo which lists the dependencies for the project.
