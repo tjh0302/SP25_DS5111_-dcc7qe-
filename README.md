@@ -1,5 +1,5 @@
 # Repository Overview
-This repository allows the user to automate the extraction of wsj and yahoo stock gainers data, then provides functionality to normalize the data. Tests and linting files have been added.
+This repository allows the user to automate the extraction of wsj and yahoo stock gainers data, then provides functionality to normalize the data. Tests and linting functionality has been added.
 
 ## Part 1 - Steps to use the DS5111 Repository:
 1. Run "sudo apt update" on your virtual machine
