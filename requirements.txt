@@ -4,3 +4,4 @@ html5lib
 beautifulsoup4
 pylint
 pytest
+# would be good to version the packages
