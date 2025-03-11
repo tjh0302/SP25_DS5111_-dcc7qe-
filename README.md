@@ -22,5 +22,12 @@ This repository allows the user to automate the extraction of wsj and yahoo stoc
 
 <img width="649" alt="image" src="https://github.com/user-attachments/assets/f2f6ecef-1fd9-4174-b2b6-85d6d5128db3" />
 
+## Part 3 - Running workflows for wsj and yahoo gainers data.
+1. First run "make update" and activate the environment ". env/bin/activate".
+2. The you can use the repo's functionality to extract wsj data ("make wsjgainers.csv") or yahoo data ("make ygainers.csv").
+3. You can standardize the raw data into a more useful format to operate on by running the "/bin/normalize_csv.py" module.
+4. Three test modules are available in /tests, as well as linting, and can be implemented by running "make test"
+5. A github action is available using the /.github/workflows/validation.yaml file and through the Actions tab.
+
 
 [![Feature Validation](https://github.com/tjh0302/SP25_DS5111_-dcc7qe-/actions/workflows/validations.yaml/badge.svg)](https://github.com/tjh0302/SP25_DS5111_-dcc7qe-/actions/workflows/validations.yaml)
