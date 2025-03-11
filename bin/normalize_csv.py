@@ -1,6 +1,10 @@
-import pandas as pd
-import os
+'''
+This module imports and normalizes data from two sources - yahoo and wsj,
+then outputs a normalized csv file for both, separately.
+'''
+
 import re
+import pandas as pd
 
 # import the raw files
 wsj = pd.read_csv('wjsgainers.csv')
@@ -8,7 +12,10 @@ yahoo = pd.read_csv('ygainers.csv')
 
 # normalize the wsj data
 def normalize_wsj(df):
-    
+    '''
+    This function normalizes the wsj data.
+    '''
+
     assert isinstance(df, pd.DataFrame), "Expected a dataframe"
     raw = df.copy()
 
@@ -16,7 +23,7 @@ def normalize_wsj(df):
     raw.columns = ['symbol', 'price', 'price_change', 'price_percent_change']
     raw['symbol'] = raw['symbol'].apply(lambda x: x[x.find('('):])
     raw['symbol'] = raw['symbol'].apply(lambda x: re.sub('[( )]', '', x))
-    
+
     assert len(raw.columns) == 4, "could not match up columns"
     return raw
 
@@ -24,19 +31,21 @@ wsj_norm = normalize_wsj(wsj)
 
 # normalize the yahoo data
 def normalize_yahoo(df):
-    
-    assert isinstance(df, pd.DataFrame), "Expected a dataframe"    
+    '''
+    This function normalizes the yahoo data.
+    '''
+    assert isinstance(df, pd.DataFrame), "Expected a dataframe"
     raw = df.copy()
-    
+
     raw = raw[['Symbol', 'Price', 'Change', 'Change %']]
     raw.columns = ['symbol', 'price', 'price_change', 'price_percent_change']
     raw['price'] = raw['price'].apply(lambda x: x[:x.find(' ')])
     raw['price'] = raw['price'].apply(lambda x: re.sub('[,]', '', x))
-    raw['price_percent_change'] = raw['price_percent_change'].apply(lambda x: re.sub('[-+%]', '', x))
+    raw['price_percent_change'] = raw['price_percent_change'].apply(lambda x: re.sub('[-+%]','',x))
 
     for col in ['price', 'price_change', 'price_percent_change']:
         raw[col] = raw[col].astype('float64')
-    
+
     assert len(raw.columns) == 4, "could not match up columns"
     return raw
 
