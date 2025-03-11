@@ -22,3 +22,5 @@ This repository allows the user to automate the extraction of wsj and yahoo stoc
 
 <img width="649" alt="image" src="https://github.com/user-attachments/assets/f2f6ecef-1fd9-4174-b2b6-85d6d5128db3" />
 
+
+[![Feature Validation](https://github.com/tjh0302/SP25_DS5111_-dcc7qe-/actions/workflows/validations.yaml/badge.svg)](https://github.com/tjh0302/SP25_DS5111_-dcc7qe-/actions/workflows/validations.yaml)
