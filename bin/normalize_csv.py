@@ -5,7 +5,7 @@ import re
 import pandas as pd
 
 # import the raw files
-wsj = pd.read_csv('wjsgainers.csv')
+wsj = pd.read_csv('wsjgainers.csv')
 yahoo = pd.read_csv('ygainers.csv')
 
 # normalize the wsj data
