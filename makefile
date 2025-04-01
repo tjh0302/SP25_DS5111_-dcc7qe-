@@ -14,16 +14,24 @@ ygainers.csv: ygainers.html
 	python -c "import pandas as pd; raw = pd.read_html('ygainers.html'); raw[0].to_csv('ygainers.csv')"
 
 wsjgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox https://www.wsj.com/market-data/stocks/us/movers > wsjgainers.html
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox 'https://www.wsj.com/market-data/stocks/us/movers' > wsjgainers.html
 
 wsjgainers.csv: wsjgainers.html
 	python -c "import pandas as pd; raw = pd.read_html('wsjgainers.html'); raw[0].to_csv('wsjgainers.csv')"
 
 lint:
 	pylint bin/normalize_csv.py
+	#pylint get_gainer.py ## for some reason, this python version throws an error anywhere "bin.[package name]" is imported.
+	pylint bin/base.py
+	#pylint bin/factory.py
+	#pylint bin/yahoo.py
+	#pylint bin/wsj.py
 
 test: lint
 	pytest -vv tests
+
+gainers:
+	python get_gainer.py ${SRC}
 
 final_git_push: lint test
 	git push
