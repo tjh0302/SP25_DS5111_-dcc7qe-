@@ -7,6 +7,7 @@ import sys
 import re
 import subprocess
 from datetime import datetime
+from pytz import timezone
 import pandas as pd
 sys.path.append('.')
 from bin.base import GainerDownload, GainerProcess
@@ -37,7 +38,9 @@ class GainerDownloadYahoo(GainerDownload):
         print("Downloading yahoo gainers")
         subprocess.run(['make', '-C', '.', 'ygainers.csv'],
 capture_output=True, text=True, check=True, shell=False)
-        self.raw_df = pd.read_csv('ygainers.csv')
+        tz = timezone('US/Eastern')
+        now = datetime.now(tz)
+        self.raw_df = pd.read_csv(f'ygainers_{now.year}_{now.month}_{now.day}_{now.hour}_{now.minute}.csv')
         return self.raw_df
 
 # Processor
@@ -82,7 +85,8 @@ lambda x: re.sub('[-+%]','',x))
         It will be saved in the root because I do not specify a folder.
         '''
         print("Saving Yahoo gainers")
-        now = datetime.now()
+        tz = timezone('US/Eastern')
+        now = datetime.now(tz)
         format_date = f'{now.year}_{now.month}_{now.day}'
         format_time = f'{now.hour}_{now.minute}_{now.second}'
 
