@@ -21,11 +21,11 @@ wsjgainers.csv: wsjgainers.html
 
 lint:
 	pylint bin/normalize_csv.py
-	#pylint get_gainer.py ## for some reason, this python version throws an error anywhere "bin.[package name]" is imported.
+	pylint get_gainer.py
 	pylint bin/base.py
-	#pylint bin/factory.py
-	#pylint bin/yahoo.py
-	#pylint bin/wsj.py
+	pylint bin/factory.py
+	pylint bin/yahoo.py
+	pylint bin/wsj.py
 
 test: lint
 	pytest -vv tests
