@@ -40,7 +40,8 @@ class GainerDownloadYahoo(GainerDownload):
 capture_output=True, text=True, check=True, shell=False)
         tz = timezone('US/Eastern')
         now = datetime.now(tz)
-        self.raw_df = pd.read_csv(f'ygainers_{now.year}_{now.month}_{now.day}_{now.hour}_{now.minute}.csv')
+        format_time = f'{now.year}_{now.month}_{now.day}_{now.hour}_{now.minute}'
+        self.raw_df = pd.read_csv(f'ygainers_{format_time}.csv')
         return self.raw_df
 
 # Processor
