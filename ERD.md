@@ -7,8 +7,8 @@ the fields required from the raw data, and the intermediate steps required.
 
 ### Use cases
 Two likely use cases are identified based on the objectives of the investing firm. 
-The first use case is to plot in a timeseries the 3 stocks that had the largest daily percentage increase, for each source - wsj and yahoo. 
-This requires an intermediate table which ranks the symbols from largest to smallest daily percent changes, using the closing-gainers data for each day.
+The first use case is to plot in a timeseries the three largest percentage increases of all stocks that day, for each source - wsj and yahoo. 
+This requires an intermediate table which ranks each stock from largest to smallest daily percent changes, using the closing-gainers data for each day.
 The intermediate table requires a table for each day that consists of the list of gainers symbols for each of the three time frames: opening, midday, and closing. 
 
 The second use case is to plot a barchart from a final table of the most volatile stocks for the week.
