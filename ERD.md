@@ -9,8 +9,7 @@ the fields required from the raw data, and the intermediate steps required.
 Two likely use cases are identified based on the objectives of the investing firm. 
 The first use case is to plot in a timeseries the 3 stocks that had the largest daily percentage increase, for each source - wsj and yahoo. 
 This requires an intermediate table which ranks the symbols from largest to smallest daily percent changes, using the closing-gainers data for each day.
-The intermediate table requires a table for each day that consists of the list of gainers symbols for each of the three time frames
- - opening, midday, and closing. 
+The intermediate table requires a table for each day that consists of the list of gainers symbols for each of the three time frames: opening, midday, and closing. 
 
 The second use case is to plot a barchart from a final table of the most volatile stocks for the week.
 The most volatile stocks are computed in an intermediate table called 'opening-list only'. 
@@ -25,6 +24,7 @@ The intermediate table will require the list of opening gainers and closing gain
 Below is the mermaidjs code for the ERD.
 
 erDiagram
+
     SYMBOL }|--|| OPENING-PRICE-PERC-CHANGE: has
     SYMBOL }|--|| MIDDAY-PRICE-PERC-CHANGE: has
     SYMBOL }|--|| CLOSING-PRICE-PERC-CHANGE: has
