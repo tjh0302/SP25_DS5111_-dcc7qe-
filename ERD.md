@@ -22,7 +22,7 @@ The intermediate table will require the list of opening gainers and closing gain
 ### Diagram
 
 Below is the mermaidjs code for the ERD.
-
+```mermaid
 erDiagram
 
     SYMBOL }|--|| OPENING-PRICE-PERC-CHANGE: has
@@ -46,3 +46,4 @@ erDiagram
     DAY }|--|| OPENING-LIST-ONLY: has
     MOST-VOLATILE-STOCKS }|--|| OPENING-LIST-ONLY : determines
     BARCHART ||--|{ MOST-VOLATILE-STOCKS : contains
+```
